@@ -15,6 +15,8 @@
 		362E5C0A2773B09E00D65AE7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 362E5C082773B09E00D65AE7 /* LaunchScreen.storyboard */; };
 		362E5C122778E08100D65AE7 /* PersonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 362E5C112778E08100D65AE7 /* PersonCell.swift */; };
 		362E5C142778E9A100D65AE7 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 362E5C132778E9A100D65AE7 /* Person.swift */; };
+		362E5C18277B2CD000D65AE7 /* scr002.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 362E5C16277B2CD000D65AE7 /* scr002.PNG */; };
+		362E5C19277B2CD000D65AE7 /* scr001.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 362E5C17277B2CD000D65AE7 /* scr001.PNG */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		362E5C0B2773B09E00D65AE7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		362E5C112778E08100D65AE7 /* PersonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonCell.swift; sourceTree = "<group>"; };
 		362E5C132778E9A100D65AE7 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		362E5C16277B2CD000D65AE7 /* scr002.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = scr002.PNG; sourceTree = "<group>"; };
+		362E5C17277B2CD000D65AE7 /* scr001.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = scr001.PNG; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +48,7 @@
 		362E5BF12773B09000D65AE7 = {
 			isa = PBXGroup;
 			children = (
+				362E5C15277B2C4500D65AE7 /* Screenshots */,
 				362E5BFC2773B09000D65AE7 /* NamesToFaces */,
 				362E5BFB2773B09000D65AE7 /* Products */,
 			);
@@ -71,6 +76,15 @@
 				362E5C0B2773B09E00D65AE7 /* Info.plist */,
 			);
 			path = NamesToFaces;
+			sourceTree = "<group>";
+		};
+		362E5C15277B2C4500D65AE7 /* Screenshots */ = {
+			isa = PBXGroup;
+			children = (
+				362E5C17277B2CD000D65AE7 /* scr001.PNG */,
+				362E5C16277B2CD000D65AE7 /* scr002.PNG */,
+			);
+			path = Screenshots;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -132,8 +146,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				362E5C0A2773B09E00D65AE7 /* LaunchScreen.storyboard in Resources */,
+				362E5C19277B2CD000D65AE7 /* scr001.PNG in Resources */,
 				362E5C072773B09E00D65AE7 /* Assets.xcassets in Resources */,
 				362E5C052773B09000D65AE7 /* Main.storyboard in Resources */,
+				362E5C18277B2CD000D65AE7 /* scr002.PNG in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -300,6 +316,7 @@
 				DEVELOPMENT_TEAM = CJ7JF497NG;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = NamesToFaces/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -328,6 +345,7 @@
 				DEVELOPMENT_TEAM = CJ7JF497NG;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = NamesToFaces/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
