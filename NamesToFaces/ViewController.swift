@@ -9,16 +9,24 @@ import UIKit
 
 class ViewController: UICollectionViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
-  //MARK: Properties
+  //MARK: - Properties
   var people = [Person]()
 
   //MARK: - ViewController Lifecycle
   override func viewDidLoad() {
     super.viewDidLoad()
     navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addNewPerson))
+
+    let defaults = UserDefaults.standard
+    
+    if let savedPeople = defaults.object(forKey: "people") as? Data {
+      if let decodedPeople = try? NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(savedPeople) as? [Person] {
+        people = decodedPeople
+      }
+    }
   }
 
-  //MARK: UIMethods
+  //MARK: - UIMethods
   @objc func addNewPerson() {
     let alert = UIAlertController(title: "Please, choose image source!", message: nil, preferredStyle: .actionSheet)
     let picker = UIImagePickerController()
@@ -50,6 +58,7 @@ class ViewController: UICollectionViewController, UIImagePickerControllerDelegat
 
     let person = Person(name: "Unknown", image: imageName)
     people.append(person)
+    save()
     collectionView.reloadData()
 
     dismiss(animated: true)
@@ -60,7 +69,15 @@ class ViewController: UICollectionViewController, UIImagePickerControllerDelegat
     return paths[0]
   }
 
-  //MARK: CollectionView methods
+  func save(){
+    if let saveData = try? NSKeyedArchiver.archivedData(withRootObject: people, requiringSecureCoding: false) {
+      let defaults = UserDefaults.standard
+      defaults.set(saveData, forKey: "people")
+
+    }
+  }
+
+  //MARK: - CollectionView methods
   override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
     return people.count
   }
@@ -90,6 +107,7 @@ class ViewController: UICollectionViewController, UIImagePickerControllerDelegat
     alert.addAction(UIAlertAction(title: "Ok", style: .default) { [weak self, weak alert] _ in
       guard let newName = alert?.textFields?[0].text else { return }
       person.name = newName
+      self?.save()
       self?.collectionView.reloadData()
     })
     alert.addAction(UIAlertAction(title: "Delete", style: .default){ [weak self] _ in
