@@ -1,6 +1,6 @@
 # NamesToFaces
 
-Tutorial application that uses UICollectionView, Uiimagepickercontroller, UUID and custom classes
+Tutorial application that uses UICollectionView, UIImagePickerController, UUID and custom classes
 
 
 ![Screenshot001](https://github.com/ClearCut3000/NamesToFaces/blob/main/Screenshots/scr001.PNG?raw=true)
